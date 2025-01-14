@@ -24,6 +24,12 @@ export default function InvoiceStatus({ status }) {
           <CheckIcon className="ml-1 w-4 text-white" />
         </>
       ) : null}
+       {status === 'late' ? (
+        <>
+          Late
+          <ClockIcon className="ml-1 w-4 bg-red-500 text-white" />
+        </>
+       ) : null}
     </span>
   );
 }
