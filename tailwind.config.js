@@ -1,3 +1,4 @@
+import formsPlugin from '@tailwindcss/forms';
 /** @type {import('tailwindcss').Config} */
 
 const config = {
