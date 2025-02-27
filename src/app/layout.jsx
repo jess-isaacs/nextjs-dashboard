@@ -13,18 +13,15 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body className={`${inter.className} antialiased`}>
-                {pathname === '/' ? (
-                    <>
-                        <Navbar />
-                        <main className="p-6 md:p-10">{children}</main>  {/* ✅ Ensures spacing */}
-                    </>
-                ) : (
-                    <div className="flex min-h-screen">  {/* ✅ Prevents weird height issues */}
+                {pathname !== '/' && (  // ✅ Sidebar layout for other pages
+                    <div className="flex min-h-screen">
                         <SideNav />
                         <main className="flex-grow p-6 md:p-10">{children}</main>
                     </div>
                 )}
+                {pathname === '/' && children}  // ✅ No navbar here anymore
             </body>
         </html>
     );
 }
+
